@@ -1,0 +1,43 @@
+---
+import Section from './Section.astro';
+import Social from './Social.astro';
+---
+
+<Section>
+	<div class="py-6">
+		<h2 class="pb-6 text-3xl font-bold">Contact</h2>
+		<div class="rounded-2xl bg-stone-200/50 from-orange-900 via-amber-700 to-white p-[1px] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.4)] dark:bg-gray-900">
+			<div class="rounded-[1rem] bg-stone-300 p-8 dark:bg-stone-800">
+				<p class="mb-6 text-sm text-gray-700 dark:text-gray-300">
+					Feel free to reach out if you have a question, or
+					just want to connect.
+				</p>
+
+				<div class="mb-6 space-y-4">
+					<div class="flex items-center gap-3">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-5 w-5 text-orange-600"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+							></path>
+						</svg>
+						<a
+							href="mailto:your.email@example.com"
+							class="text-sm hover:text-orange-600 dark:hover:text-orange-400"
+						>
+							your.email@example.com
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Section>

@@ -2,6 +2,8 @@
 import { AppConfig } from '@/utils/AppConfig';
 import Base from '@/layouts/Base.astro';
 import Hero from '@/components/Hero.astro';
+import Projects from '@/components/Projects.astro';
+import Contact from '@/components/Contact.astro';
 
 const { title } = AppConfig;
 const { description } = AppConfig;
@@ -9,4 +11,6 @@ const { description } = AppConfig;
 
 <Base head={{ title, description }}>
 	<Hero />
+	<Projects />
+	<Contact />
 </Base>
