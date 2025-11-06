@@ -1,7 +1,7 @@
 {
-	"name": "vigorous-virgo",
+	"name": "ddot-dev",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -12,7 +12,6 @@
 	"dependencies": {
 		"@astrojs/check": "0.9.5",
 		"@astrojs/react": "4.4.1",
-		"@astrojs/rss": "4.0.13",
 		"@astrojs/sitemap": "3.6.0",
 		"@astrojs/vercel": "8.2.11",
 		"@tailwindcss/vite": "4.1.16",
@@ -20,17 +19,13 @@
 		"@types/react-dom": "19.2.2",
 		"@vercel/analytics": "1.5.0",
 		"astro": "5.15.3",
-		"canvas-confetti": "1.9.4",
-		"mdast-util-to-string": "4.0.0",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"reading-time": "1.5.0",
 		"rehype-pretty-code": "0.14.1",
 		"tailwindcss": "4.1.16",
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
-		"@tailwindcss/typography": "0.5.19",
 		"prettier": "3.6.2",
 		"prettier-plugin-astro": "0.14.1",
 		"prettier-plugin-tailwindcss": "0.7.1"
