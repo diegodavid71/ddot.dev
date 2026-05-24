@@ -1,7 +1,11 @@
 ---
+interface Props {
+	id?: string;
+}
 
+const { id } = Astro.props;
 ---
 
-<div class="mx-auto w-full max-w-screen-lg px-4 py-6">
+<div id={id} class="mx-auto w-full max-w-2xl px-6">
 	<slot />
 </div>

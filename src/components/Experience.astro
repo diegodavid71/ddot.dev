@@ -1,0 +1,64 @@
+---
+import Section from './Section.astro';
+
+const experience = [
+	{
+		period: '2024 — now',
+		role: 'Software Engineer — Backend & GenAI',
+		company: 'CONVOTIS Iberia',
+		location: 'Remote',
+		description:
+			'Designing software architecture and Python backend for a GenAI platform on AWS. Built a hybrid event-driven database for agent history (Lambda, DynamoDB, PostgreSQL), developed the MCP/tool layer for agentic systems, and implemented a RAI filtering system with dynamic PII anonymisation in RAG pipelines.'
+	},
+	{
+		period: '2021 — 2024',
+		role: 'Software Engineer — Backend & Database',
+		company: 'GeoNet Territorial SAU',
+		location: 'Alicante',
+		description:
+			'Owned the backend and database layer of geospatial management applications. Refactored legacy PL/SQL, designed complex Oracle SQL for high-performance queries, and built all server-side logic feeding the frontend.'
+	},
+	{
+		period: '2020 — 2021',
+		role: 'Software Engineer',
+		company: 'everis (NTT Data)',
+		location: 'Alicante',
+		description:
+			'Delivered new features for the international banking platform bper.it as part of a multi-country project spanning Spain, Italy, Peru, and Morocco, with daily communication in English using AngularJS.'
+	},
+	{
+		period: '2019 — 2020',
+		role: 'Software Engineer',
+		company: 'Indra',
+		location: 'Alicante',
+		description:
+			'Maintained and developed the electronic administration platform for Generalitat Valenciana (gva.es). Diagnosed and resolved production incidents, and delivered new JavaScript features.'
+	}
+];
+---
+
+<Section id="experience">
+	<div class="border-t border-stone-200 py-16 dark:border-stone-800 md:py-24">
+		<p class="mb-8 text-xs uppercase tracking-widest text-stone-400 dark:text-stone-500">
+			02. experience
+		</p>
+		<dl class="space-y-10">
+			{
+				experience.map((item) => (
+					<div class="grid gap-1 sm:grid-cols-[140px_1fr] sm:gap-8">
+						<dt class="pt-px text-xs text-stone-400 dark:text-stone-500">{item.period}</dt>
+						<dd>
+							<p class="text-sm font-medium text-stone-900 dark:text-stone-100">{item.role}</p>
+							<p class="mt-0.5 text-xs text-stone-400 dark:text-stone-500">
+								{item.company} · {item.location}
+							</p>
+							<p class="mt-2 text-sm leading-6 text-stone-600 dark:text-stone-400">
+								{item.description}
+							</p>
+						</dd>
+					</div>
+				))
+			}
+		</dl>
+	</div>
+</Section>

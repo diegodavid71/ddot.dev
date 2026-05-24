@@ -1,0 +1,40 @@
+---
+import Section from './Section.astro';
+
+const skills = [
+	{ category: 'Languages', items: ['Python', 'SQL', 'PL/SQL', 'JavaScript', 'TypeScript'] },
+	{
+		category: 'GenAI / AI',
+		items: [
+			'LLMs',
+			'RAG',
+			'Agentic systems',
+			'MCP / Tools',
+			'Azure OpenAI',
+			'OpenAI API',
+			'RAI & PII filtering'
+		]
+	},
+	{ category: 'Cloud', items: ['AWS Lambda', 'DynamoDB', 'S3', 'Serverless architectures'] },
+	{ category: 'Databases', items: ['PostgreSQL', 'DynamoDB', 'Oracle DB'] },
+	{ category: 'Backend', items: ['REST APIs', 'Event-driven architecture', 'Pandas', 'FastAPI'] }
+];
+---
+
+<Section id="skills">
+	<div class="border-t border-stone-200 py-16 dark:border-stone-800 md:py-24">
+		<p class="mb-8 text-xs uppercase tracking-widest text-stone-400 dark:text-stone-500">
+			04. skills
+		</p>
+		<dl class="space-y-4">
+			{
+				skills.map((group) => (
+					<div class="grid gap-1 sm:grid-cols-[140px_1fr] sm:gap-8">
+						<dt class="pt-px text-xs text-stone-400 dark:text-stone-500">{group.category}</dt>
+						<dd class="text-sm text-stone-600 dark:text-stone-400">{group.items.join(' · ')}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</div>
+</Section>

@@ -1,13 +1,40 @@
 ---
 import Section from './Section.astro';
+import { AppConfig } from '@/utils/AppConfig';
 ---
 
 <Section>
-	<br />
-	<p class="pb-2 pt-6 text-4xl font-bold">Hi, I'm Diego 👨🏻‍💻</p>
-	<div class="text-sm">
-		<p class="py-2">
-			Welcome to my portfolio.
+	<div class="py-20 md:py-32">
+		<p class="mb-3 text-xs text-stone-400 dark:text-stone-500">
+			<span class="text-orange-600 dark:text-orange-500">&gt;</span> hello
 		</p>
+		<h1 class="mb-4 text-3xl font-bold text-stone-900 dark:text-stone-100 md:text-4xl">
+			I'm Diego Olivas.
+		</h1>
+		<p class="mb-3 text-base font-medium text-stone-700 dark:text-stone-300">
+			Software Engineer — Backend &amp; Generative AI
+		</p>
+		<p class="mb-8 max-w-lg text-sm leading-7 text-stone-500 dark:text-stone-400">
+			I design the backend systems, data pipelines, and tool-layer that sit around AI models —
+			turning proofs-of-concept into scalable, production-ready products.
+		</p>
+		<p class="mb-10 text-xs text-stone-400 dark:text-stone-500">
+			<span class="text-orange-600 dark:text-orange-500">// </span>open to AI Engineer &amp; Software
+			Engineer roles — GenAI applied to production backend
+		</p>
+		<div class="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+			<a
+				href={`mailto:${AppConfig.email}`}
+				class="font-medium text-stone-900 underline underline-offset-4 transition-colors hover:text-orange-600 dark:text-stone-100 dark:hover:text-orange-500"
+			>
+				get in touch →
+			</a>
+			<a
+				href={AppConfig.cv_path}
+				class="font-medium text-stone-400 underline underline-offset-4 transition-colors hover:text-stone-700 dark:text-stone-500 dark:hover:text-stone-300"
+			>
+				download cv →
+			</a>
+		</div>
 	</div>
 </Section>

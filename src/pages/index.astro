@@ -2,15 +2,20 @@
 import { AppConfig } from '@/utils/AppConfig';
 import Base from '@/layouts/Base.astro';
 import Hero from '@/components/Hero.astro';
+import About from '@/components/About.astro';
+import Experience from '@/components/Experience.astro';
 import Projects from '@/components/Projects.astro';
+import Skills from '@/components/Skills.astro';
 import Contact from '@/components/Contact.astro';
 
-const { title } = AppConfig;
-const { description } = AppConfig;
+const { title, description } = AppConfig;
 ---
 
 <Base head={{ title, description }}>
 	<Hero />
+	<About />
+	<Experience />
 	<Projects />
+	<Skills />
 	<Contact />
 </Base>

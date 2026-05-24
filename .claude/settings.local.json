@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Remove-Item *)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(Get-ChildItem \"C:\\\\CODE\\\\ddot.dev\\\\node_modules\\\\.bin\\\\\" | Where-Object { $_.Name -match \"astro\" })"
+    ]
+  }
+}

@@ -1,11 +1,25 @@
 ---
 import Section from './Section.astro';
 
-const year = new Date();
+const year = new Date().getFullYear();
 ---
 
 <Section>
-	<footer class="text-center">
-		© {year.getFullYear()} - <a class="underline hover:text-orange-600" href="/about">About</a>
+	<footer class="border-t border-stone-200 py-8 dark:border-stone-800">
+		<p class="text-xs text-stone-400 dark:text-stone-500">
+			built with <a
+				href="https://astro.build"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="underline underline-offset-4 transition-colors hover:text-stone-900 dark:hover:text-stone-100"
+				>astro</a
+			> · {year} · <a
+				href="https://github.com/main-ddot-dev"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="underline underline-offset-4 transition-colors hover:text-stone-900 dark:hover:text-stone-100"
+				>view source</a
+			>
+		</p>
 	</footer>
 </Section>

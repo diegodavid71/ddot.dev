@@ -3,6 +3,7 @@ import Footer from '@/components/Footer.astro';
 import Navbar from '@/components/Navbar.astro';
 import { AppConfig } from '@/utils/AppConfig';
 import '@/styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 
 export interface Props {
 	head: {
@@ -14,23 +15,74 @@ export interface Props {
 const {
 	head: { title, description }
 } = Astro.props as Props;
+
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : '';
+const ogImageURL = Astro.site ? new URL('/og.png', Astro.site).href : '/og.png';
+
+const jsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: AppConfig.author,
+	url: Astro.site?.href ?? '',
+	email: `mailto:${AppConfig.email}`,
+	jobTitle: 'Software Engineer — Backend & Generative AI',
+	sameAs: [AppConfig.github, AppConfig.linkedin]
+});
 ---
 
-<html lang="en">
+<html lang={AppConfig.locale}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="author" content={AppConfig.author} />
+		{canonicalURL && <link rel="canonical" href={canonicalURL} />}
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		{canonicalURL && <meta property="og:url" content={canonicalURL} />}
+		<meta property="og:site_name" content={AppConfig.site_name} />
+
+		<!-- Twitter / X -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL} />
+
+		<!-- JSON-LD Person schema -->
+		<script is:inline type="application/ld+json" set:html={jsonLd} />
+
+		<!-- JetBrains Mono -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+			rel="stylesheet"
+		/>
 
 		<link
 			rel="icon"
 			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>"
 		/>
+
+		<!-- Prevent FOUC: apply saved theme before first paint -->
+		<script is:inline>
+			(function () {
+				const t = localStorage.getItem('theme');
+				if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+					document.documentElement.classList.add('dark');
+				}
+			})();
+		</script>
+
+		<ClientRouter />
 	</head>
 	<body
-		class="flex min-h-screen flex-col bg-stone-100 font-mono text-gray-950 dark:bg-stone-900 dark:text-white"
+		class="flex min-h-screen flex-col bg-stone-50 font-mono text-stone-900 dark:bg-stone-950 dark:text-stone-100"
 	>
 		<Navbar />
 		<div class="flex-1">
