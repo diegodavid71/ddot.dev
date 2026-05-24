@@ -74,6 +74,11 @@ const jsonLd = JSON.stringify({
 					document.documentElement.classList.add('dark');
 				}
 			})();
+
+			document.addEventListener('astro:before-swap', (e) => {
+				const isDark = document.documentElement.classList.contains('dark');
+				e.newDocument.documentElement.classList.toggle('dark', isDark);
+			});
 		</script>
 
 		<ClientRouter />

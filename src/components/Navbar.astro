@@ -61,8 +61,6 @@ import Section from './Section.astro';
 </header>
 
 <script>
-	const lightSwitches = document.querySelectorAll('.light-switch');
-
 	function applyTheme(isDark: boolean) {
 		if (isDark) {
 			document.documentElement.classList.add('dark');
@@ -73,18 +71,16 @@ import Section from './Section.astro';
 		}
 	}
 
-	if (lightSwitches.length > 0) {
-		const isDarkTheme = document.documentElement.classList.contains('dark');
-
+	function initThemeToggle() {
+		const lightSwitches = document.querySelectorAll('.light-switch');
 		lightSwitches.forEach((lightSwitch) => {
-			(lightSwitch as HTMLInputElement).checked = isDarkTheme;
-		});
-
-		lightSwitches.forEach((lightSwitch) => {
-			(lightSwitch as HTMLInputElement).addEventListener('click', () => {
-				const isChecked = (lightSwitch as HTMLInputElement).checked;
-				applyTheme(isChecked);
+			(lightSwitch as HTMLInputElement).checked =
+				document.documentElement.classList.contains('dark');
+			lightSwitch.addEventListener('click', () => {
+				applyTheme((lightSwitch as HTMLInputElement).checked);
 			});
 		});
 	}
+
+	document.addEventListener('astro:page-load', initThemeToggle);
 </script>
