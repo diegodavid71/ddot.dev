@@ -1,9 +1,9 @@
 export const AppConfig = {
 	site_name: 'ddot.dev',
-	title: 'Diego Olivas — Software Engineer',
+	title: 'Diego — Software Engineer',
 	description:
 		'Software Engineer specialised in Backend & Generative AI. I design the architecture and tooling that make AI systems production-ready.',
-	author: 'Diego Olivas',
+	author: 'Diego',
 	email: 'hello@ddot.dev',
 	github: 'https://github.com/main-ddot-dev',
 	linkedin: 'https://www.linkedin.com/in/ddot/',
