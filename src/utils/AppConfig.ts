@@ -4,8 +4,7 @@ export const AppConfig = {
 	description:
 		'Software Engineer specialised in Backend & Generative AI. I design the architecture and tooling that make AI systems production-ready.',
 	author: 'Diego Olivas',
-	location: 'Spain',
-	email: 'diegodavid71@gmail.com',
+	email: 'hello@ddot.dev',
 	github: 'https://github.com/main-ddot-dev',
 	linkedin: 'https://www.linkedin.com/in/ddot/',
 	cv_path: '/resume.pdf',
